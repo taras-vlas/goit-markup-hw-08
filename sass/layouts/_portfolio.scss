@@ -1,0 +1,163 @@
+
+.general {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  /*outline: 2px solid tomato; /* слой */
+  /*border: 2px none; var(--button-bckgr-color); /* Убираем границу */
+  /*border: 2px solid var(--button-bckgr-color);*/
+  background-color: var(--primary-white-color);
+}
+
+/* main */
+.section-dcrtn {
+  margin: 0;
+
+  /*border-style: solid var(--secondary-bckgr-color);*/
+  /*background-color: teal;*/
+}
+
+
+
+.portfolio {
+  display: flex; /*багатострочний flex контейнер для ul*/
+  flex-wrap: wrap; /*перенос li-елементів строки*/
+  /* vertical-align: 0%;*/
+  /* align-items: center; */
+  /* justify-content: center;  /створює проблему пустого місця*/
+  /* max-lines: ; */
+  /* background-color: teal;*/
+ /* align-items: center;
+
+ /* max-lines: ;*/
+  block-size: 0%;
+}
+.portfolio .portfolio__block-li {
+  width: calc((100% - 30px * 2) / 3);
+  /*vertical-align: top;*/
+  margin-right: 30px;
+
+  /* padding-bottom: 94px; */
+  /*background-color: lightcoral;*/
+}
+
+.portfolio__hf {
+  /*outline-main { */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid var(--button-bckgr-color);
+  padding: 0;
+  transition: opacity 250ms var(--timing-function);
+  overflow: hidden;
+  /* transform: translateY(0); */
+  /* overflow: visible;*/
+}
+.portfolio__hf:hover {
+  padding: 0;
+
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  opacity: 1; /* need 1 */
+  overflow: hidden;
+}
+.portfolio__thumb-c {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio__thumb-c::before {
+  /* overlay на карточку, overlay. Базовий елемент -portfolio__thumb-c*/
+  position: absolute; /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
+  content: ""; /* бовязкова властивысть псевдоелемента, для створення - досить залишити пустим*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  right: 0;
+  background-color: var(--no-color);
+  transform: translateY(100%); /* need 100: under text , if 0 on the text*/
+  transition: transform 250ms var(--timing-function);
+  overflow: hidden;
+  opacity: 0;
+}
+.describe-work {
+  position: absolute; /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 294px;
+  top: 0;
+  right: 0;
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--primary-white-color);
+  background-color: var(--thumb-c-color);
+  transform: translateY(100%); /*  need 0 , stay */
+  transition: transform 250ms var(--timing-function);
+  opacity: 1; /* need 1 */
+}
+
+.portfolio__thumb-c:hover::before {
+  opacity: 1;
+}
+.portfolio__hf:hover .describe-work,
+.portfolio__hf:hover .portfolio__thumb-c::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* структурні псевдокласи **** вище */
+/*.portfolio__block-li:not(:last-child) {  margin-right: 30px;*/
+.portfolio .portfolio__block-li:nth-child(3n) {
+  margin-right: 0px;
+  /* зносимо правий margin у 3-го елемента */
+}
+
+.portfolio .portfolio__block-li::nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+} /* зносимо нижні margin у 3-х останніх елементів */
+
+.portfolio__block-li:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+} /* зносимо нижні margin у 3-х останніх елементів 
+.portfolio li:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}*/
+
+
+
+
+.card-title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0;
+  background-color: var(--primary-white-color);
+}
+
+.name-work {
+  margin: 0;
+  color: var(--primary-text-color);
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2; /* identical to box height, or 200% */
+  letter-spacing: 0.06em;
+}
+
+.type-work {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: var(--title-text-color);
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87; /* identical to box height, or 187% */
+  letter-spacing: 0.03em;
+}

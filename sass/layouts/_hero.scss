@@ -1,0 +1,43 @@
+/*hero*/
+h1 {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36; /* or 136% */
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero {
+  /* height: 600px; центрування  margin: 0 auto; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+
+  text-align: center; /*від цього елемента унаслідує .hero__title та .button */
+  max-width: 1600px;
+  height: 600px;
+  outline: 1px, solid, blacK;
+  background-image: linear-gradient(
+      to right,
+      rgba(33, 38, 48, 0.5),
+      rgba(23, 23, 46, 0.3)
+    ),
+    url("../images/main/main-jpeg.jpg");
+  background-position: center;
+  background-repeat: no repeat;
+  background-size: cover;
+  background-color: var(--secondary-bckgr-color);
+  color: var(--primary-white-color);
+
+  /*background-color: #tomato; / завжди використовуватити в роботі з container*/
+  /*margin-bottom: 100px; / margin, padding допоміжно використовуватити в роботі */
+}
+
+/* button - Системи кнопок M.2,Веб.З: 2.09.40 */
+.hero .hero__butn {
+  text-decoration: none; /*праює тільки зі ссилками*/
+}

@@ -1,0 +1,114 @@
+.backdrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1024px;
+  background-color: var(--noel-color);
+  /* overflow: auto; /* скрол */
+  transition: opacity 250ms var(--timing-function);
+  /* opacity: 1;
+  /* visibility: visible;*/
+}
+.backdrop .is-hidden {
+  /* "вскрыть" - спеціальні класи */
+  opacity: 0; /* 1 прозорість 100%; або 0 - 0% */
+  /* visibility: hidden; /* блокує елементи під оверлеєм коли вікна backdrop вскрите */
+  pointer-events: none; /* =вказівника позиція; none означає, що за умови дії класу is-hidden на елемент не діють події*/
+}
+.backdrop .is-hidden .modal-w {
+  transform: translate(-50%, 100%) scale(0.1);
+}
+
+.modal-w {
+  position: fixed; /* ! рекомендується 1)позиція, 2)геометрія, 3) інше */
+  /* left: 529px;
+  top: 221px; */
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  /* позиціювання рекомендується саме таке: transform   JS*/
+  transform: translate(-50%, -50%) scale(1.05);
+  /* , scale:(1); значення > або < 1 деє ефект прближення чи віддалення вікна*/
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+    inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(1px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 4px;
+  background-color: var(--primary-white-color);
+  color: var(--primary-text-color);
+  transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
+  /*transition: all 250ms;*/
+}
+.button__modal-close {
+  /* close*/
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: calc(30px - 1px);
+  border-radius: 50%;
+  border: 1px solid var(--title-text-color);
+  background-color: var(--primary-white-color);
+  transition: background-color 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+/* overflow: auto; /* скрол */
+/* visibility: hidden; */
+
+.icon-modal-close {
+  /* іконка <svg>*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--primary-text-color); /* перед цим з sprite.svg видалити fill */
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+
+.is-hidden {
+  top: -100%;
+  transform: translate(-50%, -50%);
+} /* scale(0.1); */
+
+.button__modal-close:hover {
+  /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
+  /* fill: var(--accent-color); */
+  color: var(--accent-color);
+}
+.modal-w .button__modal-close:hover .icon-modal-close {
+  /* hover на ссилку */
+  fill: var(--accent-color);
+}
+.content-modal {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+.modal-title {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-left: 0;
+  margin-bottom: 12px;
+  margin-top: 0;
+  color: var(--primary-text-color);
+}
+.flexbox-modal {
+  display: flex;
+  flex-direction: column;
+}

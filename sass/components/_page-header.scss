@@ -1,0 +1,122 @@
+/**** Site-nav  */
+.page-header{
+}
+.page-header__menu-nv {
+  position: relative;     
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+.page-header__logo{
+    margin-right: 93px; 
+  }
+ .page-header__site-nav .link,
+.page-header__aus-nav .link {
+  
+  display: block;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: var(--title-text-color);
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+} 
+/* очистка крайньої геометрії, 3-й варіант*/
+.page-header__site-nav .page-header__li-site-nav + .page-header__li-site-nav { 
+   margin-left: 50px; 
+}
+
+.page-header__site-nav {
+  display: inline-flex;
+}
+.page-header__site-nav .page-header__current{
+  display: block; /* зняти зазор перед елементом справа (для inline block - не застосовується)*/
+  color: var(--accent-color);
+  transition: color 250ms  var(--timing-function),
+              opacity 250ms  var(--timing-function);
+}
+.page-header__site-nav .link:hover,
+.page-header__site-nav .page-header__current:focus {
+  color: var(--accent-color);
+  text-decoration: none; /*праює тільки зі ссилками*/
+
+}
+
+/* контакти:іконки mail-tel */
+/* svg */
+
+.page-header__icon-em {        /* <swg> */
+  margin-right: 10px;
+  /*width: 16px;
+  height: 12px;*/
+  fill: var(--primary-text-color);
+
+}
+.page-header__em {             /* <a> */
+  display: flex;
+  align-items: center;
+}
+
+.page-header__icon-sf {        /* <swg> */
+  margin-right:10px;   
+  /*width: 10px;
+  height: 16px;*/
+  fill: var(--title-text-color); /* перед цим з sprite.svg видалити fill */
+}   
+.page-header__sf {            /* <a> */
+  display: flex;
+  align-items: center;
+}
+
+.page-header__ms {    /* <li>  */
+  display: flex;  
+  align-items: center; 
+ /* background-color: var(--social-grey-color);*/
+ }
+
+.page-header__ms .link  {
+  display: flex;  /* зняти зазор перед елементом справа (для inline block - не застосовується) */
+  padding-top: 32px;
+  padding-bottom: 32px;
+  align-items: center;
+}
+.page-header__aus-nav {     /* <ul> */
+  display: flex;
+  margin-left: auto;
+}
+.page-header__aus-nav .page-header__ms + .page-header__ms {    /* <li>  */
+  margin-left: 30px;
+
+}
+
+.page-header__aus-nav .page-header__em:hover .page-header__icon-em,
+.page-header__aus-nav .page-header__sf:hover .page-header__icon-sf {
+  fill: var(--accent-color);
+  transition: fill 250ms  var(--timing-function),
+  opacity 250ms  var(--timing-function);
+}
+.page-header__aus-nav .page-header__em:hover, 
+.page-header__aus-nav .page-header__em:focus, 
+.page-header__aus-nav .page-header__sf:hover,
+.page-header__aus-nav .page-header__sf:focus {
+ color: var(--accent-color);
+}
+.page-header__li-site-nav{
+  position: relative;
+ }
+.page-header__current::after {   /* клас з   <a class="link current" href="./index.html">Студия</a> */
+  content: "";
+  position: absolute; /* ! на батька задати ссилку  position: relative; +++ -> вище */
+  width: 100%;
+  height: 4px;
+  left:0;
+  bottom:0;
+  background: var(--accent-color);
+  border-radius: 2px; 
+  align-items: center;
+}
+  

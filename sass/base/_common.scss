@@ -1,0 +1,55 @@
+
+body {
+  background-color: var(--primary-white-color);
+  color: var(--title-text-color);
+
+  font-family: Roboto, Raleway, sans-serif;
+  /*щрифт без насічок*/
+  /*letter-spacing: 0.15em;   Унаслідковуване*/
+}
+
+.container {
+  /*  центрування  */
+  /*margin: 0 auto;*/
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px; /* 1170 + 15 + 15 */
+  padding-left: 15px;
+  padding-right: 15px;
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+    @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+    @media screen and (min-width: 1140px) {
+    width: 1140px;
+  }
+  }
+  /*outline: 2px solid tomato; /* слой */
+  /* background-color: #fffbbb; / завжди використовуватити в роботі з container*/
+}
+
+/*  margin: 0 auto;  */
+img {
+  /*зняти margin в картиках*/
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list {
+  padding: 0; /* або пройтись через ліву крайню кнопку в F12 */
+  margin: 0; /* або пройтись через ліву крайню кнопку в F12 */
+     
+  /* class для сброса стиля, например, точек при uL 
+  и link для можно так же. M.2,Веб.З: 1.42.20 */
+  list-style: none; 
+}
+.flexbox {
+  display: flex;
+}

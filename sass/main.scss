@@ -1,0 +1,20 @@
+@import "./utils/variables";
+@import "./base/modern-normalize";
+@import "./base/fonts"; 
+@import "./utils/mixins"; 
+// @import "./utils/placeholders"; 
+
+@import "./base/common";
+@import "./components/logo";
+@import "./components/page-header";
+@import "./layouts/hero";
+@import "./layouts/advantage";
+@import "./components/butn";
+@import "./layouts/activity";
+@import "./layouts/staff";
+@import "./components/social";
+@import "./layouts/clients";
+@import "./components/page-footer";
+@import "./components/modal";
+@import "./components/form";
+

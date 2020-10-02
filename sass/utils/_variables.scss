@@ -1,0 +1,68 @@
+$primary-text-color: #212121;
+$title-text-color: #757575;
+$accent-color: #2196f3;
+$primary-white-color: #ffffff;
+
+$secondary-bckgr-color: #2f303a;
+$secondary-grey-color: rgba(255, 255, 255, 0.6);
+$social-grey-color:  rgba(255, 255, 255, 0.1);
+$field-color:  rgba(47, 48, 58, 0.8);
+$thumb-c-color: rgba(33, 150, 243, 0.9);  /* Голубой #2196f3 (33, 150, 243) 90% */
+ 
+$secondary-black-color: #000000;
+$button-bckgr-color: #f5f4fa;
+$social-color: #AFB1B8;
+$no-color: rgba(0, 0, 0, 0);/* 00 - полностью прозрачный */
+$noel-color: rgba(0, 0, 0, 0.1);
+$butn-background: #E5E5E5;    
+
+// не розумшю причину неспрацювання  $colors:
+$colors: (
+'primary-text-color': #212121,
+'title-text-color': #757575,
+'accent-color': #2196f3,
+'primary-white-color': #ffffff,
+
+'secondary-bckgr-color': #2f303a,
+'secondary-grey-color': rgba(255, 255, 255, 0.6),
+'social-grey-color':  rgba(255, 255, 255, 0.1),
+'field-color':  rgba(47, 48, 58, 0.8),
+'thumb-c-color': rgba(33, 150, 243, 0.9),  /* Голубой #2196f3 (33, 150, 243) 90% */
+ 
+'secondary-black-color': #000000,
+'button-bckgr-color': #f5f4fa,
+'social-color': #AFB1B8,
+'no-color': rgba(0, 0, 0, 0),/* 00 - полностью прозрачный */
+'noel-color': rgba(0, 0, 0, 0.1),
+'butn-background': #E5E5E5,         
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);  
+} 
+
+
+// залишив  :root 
+:root {
+  /*як селектор html для index.html
+  Робимо об'яву своїх перемінних:*/
+  --primary-text-color: #212121;
+  --title-text-color: #757575;
+  --accent-color: #2196f3;
+  --primary-white-color: #ffffff;
+
+  --secondary-bckgr-color: #2f303a;
+  --secondary-grey-color: rgba(255, 255, 255, 0.6);
+  --social-grey-color:  rgba(255, 255, 255, 0.1);
+  --field-color:  rgba(47, 48, 58, 0.8);
+  --thumb-c-color: rgba(33, 150, 243, 0.9);  /* Голубой #2196f3 (33, 150, 243) 90% */
+ 
+  --secondary-black-color: #000000;
+  --button-bckgr-color: #f5f4fa;
+  --social-color: #AFB1B8;
+  --no-color:  rgba(0, 0, 0, 0); /* 00 - полностью прозрачный */
+  --noel-color: rgba(0, 0, 0, 0.1);
+  --butn-background: #E5E5E5;
+
+  --timing-function:  cubic-bezier(0.4, 0, 0.2, 1);
+}
