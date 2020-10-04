@@ -1,22 +1,19 @@
-
 .general {
   padding-top: 94px;
   padding-bottom: 94px;
   /*outline: 2px solid tomato; /* слой */
-  /*border: 2px none; var(--button-bckgr-color); /* Убираем границу */
-  /*border: 2px solid var(--button-bckgr-color);*/
-  background-color: var(--primary-white-color);
+  /*border: 2px none; $button-bckgr-color; /* Убираем границу */
+  /*border: 2px solid $button-bckgr-color;*/
+  background-color: $primary-white-color;
 }
 
 /* main */
 .section-dcrtn {
   margin: 0;
 
-  /*border-style: solid var(--secondary-bckgr-color);*/
+  /*border-style: solid $secondary-bckgr-color;*/
   /*background-color: teal;*/
 }
-
-
 
 .portfolio {
   display: flex; /*багатострочний flex контейнер для ul*/
@@ -26,7 +23,7 @@
   /* justify-content: center;  /створює проблему пустого місця*/
   /* max-lines: ; */
   /* background-color: teal;*/
- /* align-items: center;
+  /* align-items: center;
 
  /* max-lines: ;*/
   block-size: 0%;
@@ -46,9 +43,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid var(--button-bckgr-color);
+  border: 1px solid $button-bckgr-color;
   padding: 0;
-  transition: opacity 250ms var(--timing-function);
+  transition: opacity 250ms $timing-function;
   overflow: hidden;
   /* transform: translateY(0); */
   /* overflow: visible;*/
@@ -76,9 +73,9 @@
   height: 100%;
   bottom: -100%;
   right: 0;
-  background-color: var(--no-color);
+  background-color: $no-color;
   transform: translateY(100%); /* need 100: under text , if 0 on the text*/
-  transition: transform 250ms var(--timing-function);
+  transition: transform 250ms $timing-function;
   overflow: hidden;
   opacity: 0;
 }
@@ -95,10 +92,10 @@
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-  color: var(--primary-white-color);
-  background-color: var(--thumb-c-color);
+  color: $primary-white-color;
+  background-color: $thumb-c-color;
   transform: translateY(100%); /*  need 0 , stay */
-  transition: transform 250ms var(--timing-function);
+  transition: transform 250ms $timing-function;
   opacity: 1; /* need 1 */
 }
 
@@ -129,21 +126,18 @@
   margin-bottom: 30px;
 }*/
 
-
-
-
 .card-title {
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 24px;
   padding-right: 24px;
   margin: 0;
-  background-color: var(--primary-white-color);
+  background-color: $primary-white-color;
 }
 
 .name-work {
   margin: 0;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
 
   font-weight: 700;
   font-size: 18px;
@@ -154,7 +148,7 @@
 .type-work {
   margin-top: 10px;
   margin-bottom: 0px;
-  color: var(--title-text-color);
+  color: $title-text-color;
 
   font-weight: 400;
   font-size: 16px;

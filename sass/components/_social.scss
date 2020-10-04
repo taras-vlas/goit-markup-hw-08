@@ -12,9 +12,8 @@
   /* іконка <svg>*/
   height: 20px;
   width: 20px;
-  fill: var(--social-color); /* перед цим з sprite.svg видалити fill */
-  transition: fill 250ms var(--timing-function),
-    opacity 250ms var(--timing-function);
+  fill: $social-color; /* перед цим з sprite.svg видалити fill */
+  transition: fill 250ms $timing-function, opacity 250ms $timing-function;
 }
 .social__link {
   /* ссилка <a> */
@@ -26,15 +25,15 @@
   border-radius: 50%;
 }
 .social--link-color {
-  background-color: var(--primary-white-color);
-  transition: background-color 250ms var(--timing-function),
-    opacity 250ms var(--timing-function);
+  background-color: $primary-white-color;
+  transition: background-color 250ms $timing-function,
+    opacity 250ms $timing-function;
 }
 .social__link:hover {
   /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 }
 .social__item .social__link:hover .social__icon {
   /* hover на ссилку */
-  fill: var(--primary-white-color);
+  fill: $primary-white-color;
 }

@@ -1,20 +1,19 @@
 /* logo */
 .logo {
   display: inline-flex;
-  color: var(--accent-color);
+  color: $accent-color;
   font-family: Raleway, cursive;
   font-size: 26px;
   line-height: 1.19;
   /* identical to box height */
   letter-spacing: 0.03em;
   text-decoration: none; /*праює тільки зі ссилками*/
- }
- 
+}
 
 .logo--black {
-    color: var(--secondary-black-color);
+  color: $secondary-black-color;
 }
 
 .logo--white {
-  color: var(--primary-white-color);
+  color: $primary-white-color;
 }

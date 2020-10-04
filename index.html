@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Препроцессор SASS. WebStudio</title> 
+    <title>Препроцессор SASS. WebStudio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -21,43 +21,102 @@
 
   <body>
     <!-- Шапка страницы -->
-    <header class="page-header">
-      <div class="container page-header__menu-nv">
+  <header class="header">
+
+  <section class="section features">
+
+    <div class="header">
+      <div class="container">
+        <nav class="nav">
+    <!--   <a class="logo" href=" " >Логотип</a> -->
+
+          <a href="./" lang="en" class="logo header__logo"
+          >Web<span class="logo--black">Studio</span></a>
+            <button type="button"
+            class="menu-button"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button
+            >
+              <svg width="24" height="16" aria-label="Переключатель мобильного меню">
+                <use class="icon-cross" href="./images/main/sprite-cl-gn.svg#closelink"></use>
+                <use class="icon-menu" href="./images/main/sprite-form.svg#three-bars"></use>
+              </svg>
+            </button>
+              <div class="menu-container" id="menu-container" data-menu>
+        <!--     Контент меню -->
+                <div class="navigation" ></div>
+                <div class="contacts"></div>
+              </div>
+        </nav>
+      </div>
+    </div>
+
+
+  
+    <div class="container-m">
+      <!-- btn -->
+      <h2 class="section-title">Заголовок 1-й секции</h2>
+  
+      <ul class="features-set">
+        <li class="features-item">1</li>
+        <li class="features-item">2</li>
+        <li class="features-item">3</li>
+        <li class="features-item">4</li>
+        <li class="features-item">5</li>
+        <li class="features-item">6</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <div class="container">
+      <h2 class="section-title">Заголовок 2-й секции</h2>
+  
+      <ul class="reviews-set">
+        <li class="reviews-item">1</li>
+        <li class="reviews-item">2</li>
+        <li class="reviews-item">3</li>
+      </ul>
+    </div>
+  </section>
+
+
+
+      <div class="container header__menu-nv">
         <!-- site-nav - Главная навигация -->
         <nav>
           <!-- logo Логотип, всегда ссылка -->
-          <a href="./" lang="en" class="logo page-header__logo"
+          <a href="./" lang="en" class="logo header__logo"
             >Web<span class="logo--black">Studio</span></a
           >
           <!-- site-nav - Ссылки на другие страницы или разделы текущей -->
-          <ul class="list page-header__site-nav">
-            <li class="page-header__li-site-nav">
-              <a class="link page-header__current" href="./index.html"
-                >Студия</a
-              >
+          <ul class="list header__site-nav">
+            <li class="header__li-site-nav">
+              <a class="link header__current" href="./index.html">Студия</a>
             </li>
-            <li class="page-header__li-site-nav">
+            <li class="header__li-site-nav">
               <a class="link" href="./html/portfolio.html">Портфолио</a>
             </li>
-            <li class="page-header__li-site-nav">
+            <li class="header__li-site-nav">
               <a class="link" href="./">Контакты</a>
             </li>
           </ul>
         </nav>
 
         <!-- aus-nav, Contats -->
-        <ul class="page-header__aus-nav list">
-          <li class="page-header__ms">
-            <a href="mailto:info@devstudio.com" class="link page-header__em">
-              <svg class="page-header__icon-em" width="16" height="12">
+        <ul class="header__aus-nav list">
+          <li class="header__ms">
+            <a href="mailto:info@devstudio.com" class="link header__em">
+              <svg class="header__icon-em" width="16" height="12">
                 <use href="./images/main/sprite-cl-gn.svg#envelope"></use>
               </svg>
               info@devstudio.com
             </a>
           </li>
-          <li class="page-header__ms">
-            <a href="tel:+380961111111" class="link page-header__sf">
-              <svg class="page-header__icon-sf" width="10" height="16">
+          <li class="header__ms">
+            <a href="tel:+380961111111" class="link header__sf">
+              <svg class="header__icon-sf" width="10" height="16">
                 <use href="./images/main/sprite-cl-gn.svg#smartphone"></use>
               </svg>
               +38 (096) 111 11 11
@@ -123,7 +182,7 @@
         <div class="container">
           <h2 class="section-title">Чем мы занимаемся</h2>
           <ul class="list activity__ul">
-            <li class="activity__li  img">
+            <li class="activity__li img">
               <img
                 src="./images/21.jpg"
                 alt="Программист за работой, использует планшет, рукопись, набирая команды на клавиатуре."
@@ -141,7 +200,7 @@
               <p class="activity__label">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p>
               <!--  -->
             </li>
-            <li class="activity__li  img">
+            <li class="activity__li img">
               <img
                 src="./images/23.jpg"
                 alt="Дизайнер держит в руках планшет и выбирает цвет из изображенной палитры цветов."
@@ -553,11 +612,11 @@
     </main>
 
     <!-- Подвал страницы -->
-    <footer class="page-footer">
+    <footer class="footer">
       <div class="container flexbox">
         <!-- Адрес и контакты -->
         <div class="block-adr">
-          <a href="./" lang="en" class="logo page-footer__logo"
+          <a href="./" lang="en" class="logo footer__logo"
             >Web<span class="logo--white">Studio</span></a
           >
           <address class="block-adr__address">
@@ -637,25 +696,23 @@
           <b class="telegram-title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</b>
           <div class="body-telegram">
             <form action="#" id="form" method="POST">
-                <input
-                  type="email"
-                  name="telegram"
-                  id="telegram"
-                  class="box-telegram font-telegram"
-                  placeholder="Email"
-                  pattern="^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
-                  autocomplete="off"
-                  required
-                />
- 
-              
-                <button type="submit" class="filter-btn__btn-p">
-                  Подписаться
-                  <svg class="icon-send" width="24" height="24">
-                    <use href="./images/main/sprite-form.svg#icon-send"></use>
-                  </svg>
-                </button>
-              
+              <input
+                type="email"
+                name="telegram"
+                id="telegram"
+                class="box-telegram font-telegram"
+                placeholder="Email"
+                pattern="^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+                autocomplete="off"
+                required
+              />
+
+              <button type="submit" class="filter-btn__btn-p">
+                Подписаться
+                <svg class="icon-send" width="24" height="24">
+                  <use href="./images/main/sprite-form.svg#icon-send"></use>
+                </svg>
+              </button>
             </form>
           </div>
         </div>
@@ -665,92 +722,144 @@
     <!-- модальне вікно, скрипт JS в modal.js-->
 
     <div class="backdrop is-hidden" data-modal>
-      <div class="modal-w">
+      <div class="modal">
         <div class="content-modal">
           <button class="button__modal-close" data-modal-close="">
             <svg class="icon-modal-close" width="11" height="11">
               <use href="./images/main/sprite-cl-gn.svg#closelink"></use>
             </svg>
           </button>
-        <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
-        
-        <!--  ***  ***   -->
-        <form action="#" method="POST">
-          <div class="flexbox-modal">
-            <label for="user-name" class="form-box">
-              <!-- for="user-name" відповідний  id="user-name"  -->
-              <span class="font-lt">Имя</span>
-              <input type="text" name="user-name" id="user-name" class="inputs-row font-m" placeholder=""
-                pattern="^[A-Za-zА-Яа-яЁё\s]+$" autocomplete="off" required />
-              <svg class="form__field-icon bottom-black-shedow" width="18" height="18">
-                <use href="./images/main/sprite-form.svg#person-black-18dp"></use>
-              </svg>
-            </label>
-        
-            <label for="user-tel" class="form-box">
-              <span class="font-lt">Телефон</span>
-              <input type="tel" name="user-tel" id="user-tel" class="inputs-row font-m" placeholder=""
-                pattern="\+?[0-9\s\-\(\)]+" autocomplete="off" required />
-              <!--  value="tel:+380"   -->
-              <svg class="form__field-icon bottom-black-shedow" width="18" height="18">
-                <use href="./images/main/sprite-form.svg#phone-black-18dp"></use>
-              </svg>
-            </label>
-        
-            <label for="user-email" class="form-box">
-              <span class="font-lt">Почта</span>
-              <input type="email" name="user-email" id="user-email" class="inputs-row font-m" placeholder=""
-                pattern="([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" autocomplete="off" required />
-              <svg class="form__field-icon bottom-black-shedow" width="18" height="18">
-                <use href="./images/main/sprite-form.svg#email-black-18dp"></use>
-              </svg>
-            </label>
-        
-            <label for="user-message" class="form-box">
-              <span class="font-lt">Комментарий</span>
-              <textarea class="inputs-row message-box font-m color-message" id="user-message" name="user-message"
-                placeholder="Введите текст"></textarea>
-            </label>
-          </div>
-          <!-- <label for="checkbox" class="checkbox-label"> 
+          <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+
+          <!--  ***  ***   -->
+          <form action="#" method="POST">
+            <div class="flexbox-modal">
+              <label for="user-name" class="form-box">
+                <!-- for="user-name" відповідний  id="user-name"  -->
+                <span class="font-lt">Имя</span>
+                <input
+                  type="text"
+                  name="user-name"
+                  id="user-name"
+                  class="inputs-row font-m"
+                  placeholder=""
+                  pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                  autocomplete="off"
+                  required
+                />
+                <svg
+                  class="form__field-icon bottom-black-shedow"
+                  width="18"
+                  height="18"
+                >
+                  <use
+                    href="./images/main/sprite-form.svg#person-black-18dp"
+                  ></use>
+                </svg>
+              </label>
+
+              <label for="user-tel" class="form-box">
+                <span class="font-lt">Телефон</span>
+                <input
+                  type="tel"
+                  name="user-tel"
+                  id="user-tel"
+                  class="inputs-row font-m"
+                  placeholder=""
+                  pattern="\+?[0-9\s\-\(\)]+"
+                  autocomplete="off"
+                  required
+                />
+                <!--  value="tel:+380"   -->
+                <svg
+                  class="form__field-icon bottom-black-shedow"
+                  width="18"
+                  height="18"
+                >
+                  <use
+                    href="./images/main/sprite-form.svg#phone-black-18dp"
+                  ></use>
+                </svg>
+              </label>
+
+              <label for="user-email" class="form-box">
+                <span class="font-lt">Почта</span>
+                <input
+                  type="email"
+                  name="user-email"
+                  id="user-email"
+                  class="inputs-row font-m"
+                  placeholder=""
+                  pattern="([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                  autocomplete="off"
+                  required
+                />
+                <svg
+                  class="form__field-icon bottom-black-shedow"
+                  width="18"
+                  height="18"
+                >
+                  <use
+                    href="./images/main/sprite-form.svg#email-black-18dp"
+                  ></use>
+                </svg>
+              </label>
+
+              <label for="user-message" class="form-box">
+                <span class="font-lt">Комментарий</span>
+                <textarea
+                  class="inputs-row message-box font-m color-message"
+                  id="user-message"
+                  name="user-message"
+                  placeholder="Введите текст"
+                ></textarea>
+              </label>
+            </div>
+            <!-- <label for="checkbox" class="checkbox-label"> 
                       <input type="checkbox" class="checkbox visually-hidden" id="checkbox" checked /> -->
-          <!--<div class="fieldset">
+            <!--<div class="fieldset">
                           <input type="radio" name="" id="" />
                           <input type="radio" name="" id="" />
                           <input type="radio" name="" id="" />
                           </div> -->
-          <!--<input type="range" min="10" max="40" step="5" name="" id="" value="20"/> -->
-          <!--<input type="number" name="" id="" /> -->
-          <!--<select name="" id="">
+            <!--<input type="range" min="10" max="40" step="5" name="" id="" value="20"/> -->
+            <!--<input type="number" name="" id="" /> -->
+            <!--<select name="" id="">
                             <option value="">1</option>"></option>
                             <option value="">2</option>"></option>
                             <option value="">3</option>"></option>
                           </select> -->
-          <div>
-            <label for="checkbox" class="checkbox-label">
-              <input id="checkbox" type="checkbox" class="checkbox icon-checkbox  font-m">
-              <span class="text-checkbox">Соглашаюсь с рассылкой и принимаю
-                <a href="#" class="link-contract color-contract">Условия договора
-                </a>
-              </span>
-            </label>
-          </div>
-        
-          <!--  <button type="button" data-modal-close>закрить</button> -->
-          <button type="submit" class="butn butn-shedow butn-submit">
-            Отправить
-          </button>
-        </form>
+            <div>
+              <label for="checkbox" class="checkbox-label">
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  class="checkbox icon-checkbox font-m"
+                />
+                <span class="text-checkbox"
+                  >Соглашаюсь с рассылкой и принимаю
+                  <a href="#" class="link-contract color-contract"
+                    >Условия договора
+                  </a>
+                </span>
+              </label>
+            </div>
+
+            <!--  <button type="button" data-modal-close>закрить</button> -->
+            <button type="submit" class="butn butn-shedow butn-submit">
+              Отправить
+            </button>
+          </form>
         </div>
         <!--  *** end ***   -->
-        </div>
-        </div>
-        
-        <!--  скрипт JS в modal.js    -->
-        <script src="./js/modal.js"></script>
-        </body>
-        
-        </html>
+      </div>
+    </div>
+
+    <script src="./js/menu.js"></script>
+    <!--  скрипт JS в modal.js    -->
+    <script src="./js/modal.js"></script>
+  </body>
+</html>
 
 <!-- абсолютные пути
                   <img src="https://www.figma.com/file/VQ02IIL57fc33U4GP1WEdf/Web-Studio-Version-2.0?node-id=1572%3A136"

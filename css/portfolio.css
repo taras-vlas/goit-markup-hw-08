@@ -1,29 +1,52 @@
 @charset "UTF-8";
 /* Голубой #2196f3 (33, 150, 243) 90% */
 /* 00 - полностью прозрачный */
+/*
+$colors: (
+'primary-text-color': #212121,
+'title-text-color': #757575,
+'accent-color': #2196f3,
+'primary-white-color': #ffffff,
+
+'secondary-bckgr-color': #2f303a,
+'secondary-grey-color': rgba(255, 255, 255, 0.6),
+'social-grey-color':  rgba(255, 255, 255, 0.1),
+'field-color':  rgba(47, 48, 58, 0.8),
+'thumb-c-color': rgba(33, 150, 243, 0.9),  // Голубой #2196f3 (33, 150, 243) 90% 
+ 
+'secondary-black-color': #000000,
+'button-bckgr-color': #f5f4fa,
+'social-color': #AFB1B8,
+'no-color': rgba(0, 0, 0, 0),
+'noel-color': rgba(0, 0, 0, 0.1),
+'butn-background': #E5E5E5,         
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);  
+} 
+
 :root {
-  /*як селектор html для index.html
-  Робимо об'яву своїх перемінних:*/
   --primary-text-color: #212121;
   --title-text-color: #757575;
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
+
   --secondary-bckgr-color: #2f303a;
   --secondary-grey-color: rgba(255, 255, 255, 0.6);
   --social-grey-color:  rgba(255, 255, 255, 0.1);
   --field-color:  rgba(47, 48, 58, 0.8);
-  --thumb-c-color: rgba(33, 150, 243, 0.9);
-  /* Голубой #2196f3 (33, 150, 243) 90% */
+  --thumb-c-color: rgba(33, 150, 243, 0.9);  
+ 
   --secondary-black-color: #000000;
   --button-bckgr-color: #f5f4fa;
   --social-color: #AFB1B8;
-  --no-color:  rgba(0, 0, 0, 0);
-  /* 00 - полностью прозрачный */
+  --no-color:  rgba(0, 0, 0, 0); 
   --noel-color: rgba(0, 0, 0, 0.1);
   --butn-background: #E5E5E5;
-  --timing-function:  cubic-bezier(0.4, 0, 0.2, 1);
-}
 
+  --timing-function:  cubic-bezier(0.4, 0, 0.2, 1);
+}   */
 /*! modern-normalize v0.7.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 html {
   -webkit-box-sizing: border-box;
@@ -196,27 +219,53 @@ summary {
 }
 
 body {
-  background-color: var(--primary-white-color);
-  color: var(--title-text-color);
+  margin: 0;
+  background-color: #ffffff;
+  color: #757575;
   font-family: Roboto, Raleway, sans-serif;
   /*щрифт без насічок*/
   /*letter-spacing: 0.15em;   Унаслідковуване*/
 }
 
-.container {
-  /*  центрування  */
-  /*margin: 0 auto;*/
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  /* 1170 + 15 + 15 */
-  padding-left: 15px;
-  padding-right: 15px;
-  /*outline: 2px solid tomato; /* слой */
-  /* background-color: #fffbbb; / завжди використовуватити в роботі з container*/
+body.modal-open {
+  overflow: hidden;
 }
 
-/*  margin: 0 auto;  */
+/* 
+ * Базовые стили контейнера и элементов для мобильных устройств 
+ * Все блоки идут друг под другом, поэтому нету лишних стилей Flexbox
+ */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  /* margin: 0 auto; */
+  margin-right: auto;
+  max-width: 1200px;
+  /* 1170 + 15 + 15 */
+  min-width: 480px;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+/*outline: 2px solid tomato; /* слой */
+/* background-color: #fffbbb; / завжди використовуватити в роботі з container*/
 img {
   /*зняти margin в картиках*/
   display: block;
@@ -249,7 +298,7 @@ a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: var(--accent-color);
+  color: #2196f3;
   font-family: Raleway, cursive;
   font-size: 26px;
   line-height: 1.19;
@@ -260,15 +309,15 @@ a {
 }
 
 .logo--black {
-  color: var(--secondary-black-color);
+  color: #000000;
 }
 
 .logo--white {
-  color: var(--primary-white-color);
+  color: #ffffff;
 }
 
 /**** Site-nav  */
-.page-header__menu-nv {
+.header__menu-nv {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,19 +328,19 @@ a {
           align-items: center;
 }
 
-.page-header__logo {
+.logo {
   margin-right: 93px;
 }
 
-.page-header__site-nav .link,
-.page-header__aus-nav .link {
+.header__site-nav .link,
+.header__aus-nav .link {
   display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
-  color: var(--title-text-color);
+  color: #757575;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -299,42 +348,42 @@ a {
 }
 
 /* очистка крайньої геометрії, 3-й варіант*/
-.page-header__site-nav .page-header__li-site-nav + .page-header__li-site-nav {
+.header__site-nav .header__li-site-nav + .header__li-site-nav {
   margin-left: 50px;
 }
 
-.page-header__site-nav {
+.header__site-nav {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.page-header__site-nav .page-header__current {
+.header__site-nav .header__current {
   display: block;
   /* зняти зазор перед елементом справа (для inline block - не застосовується)*/
-  color: var(--accent-color);
-  -webkit-transition: color 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  color: #2196f3;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.page-header__site-nav .link:hover,
-.page-header__site-nav .page-header__current:focus {
-  color: var(--accent-color);
+.header__site-nav .link:hover,
+.header__site-nav .header__current:focus {
+  color: #2196f3;
   text-decoration: none;
   /*праює тільки зі ссилками*/
 }
 
 /* контакти:іконки mail-tel */
 /* svg */
-.page-header__icon-em {
+.header__icon-em {
   /* <swg> */
   margin-right: 10px;
   /*width: 16px;
   height: 12px;*/
-  fill: var(--primary-text-color);
+  fill: #212121;
 }
 
-.page-header__em {
+.header__em {
   /* <a> */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -344,16 +393,16 @@ a {
           align-items: center;
 }
 
-.page-header__icon-sf {
+.header__icon-sf {
   /* <swg> */
   margin-right: 10px;
   /*width: 10px;
   height: 16px;*/
-  fill: var(--title-text-color);
+  fill: #757575;
   /* перед цим з sprite.svg видалити fill */
 }
 
-.page-header__sf {
+.header__sf {
   /* <a> */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,7 +412,7 @@ a {
           align-items: center;
 }
 
-.page-header__ms {
+.header__ms {
   /* <li>  */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -371,10 +420,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* background-color: var(--social-grey-color);*/
+  /* background-color: $social-grey-color;*/
 }
 
-.page-header__ms .link {
+.header__ms .link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,7 +435,7 @@ a {
           align-items: center;
 }
 
-.page-header__aus-nav {
+.header__aus-nav {
   /* <ul> */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -394,30 +443,30 @@ a {
   margin-left: auto;
 }
 
-.page-header__aus-nav .page-header__ms + .page-header__ms {
+.header__aus-nav .header__ms + .header__ms {
   /* <li>  */
   margin-left: 30px;
 }
 
-.page-header__aus-nav .page-header__em:hover .page-header__icon-em,
-.page-header__aus-nav .page-header__sf:hover .page-header__icon-sf {
-  fill: var(--accent-color);
-  -webkit-transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
+.header__aus-nav .header__em:hover .header__icon-em,
+.header__aus-nav .header__sf:hover .header__icon-sf {
+  fill: #2196f3;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.page-header__aus-nav .page-header__em:hover,
-.page-header__aus-nav .page-header__em:focus,
-.page-header__aus-nav .page-header__sf:hover,
-.page-header__aus-nav .page-header__sf:focus {
-  color: var(--accent-color);
+.header__aus-nav .header__em:hover,
+.header__aus-nav .header__em:focus,
+.header__aus-nav .header__sf:hover,
+.header__aus-nav .header__sf:focus {
+  color: #2196f3;
 }
 
-.page-header__li-site-nav {
+.header__li-site-nav {
   position: relative;
 }
 
-.page-header__current::after {
+.header__current::after {
   /* клас з   <a class="link current" href="./index.html">Студия</a> */
   content: "";
   position: absolute;
@@ -426,14 +475,14 @@ a {
   height: 4px;
   left: 0;
   bottom: 0;
-  background: var(--accent-color);
+  background: #2196f3;
   border-radius: 2px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.page-footer {
+.footer {
   /*  центрування  */
   /*margin: 0 auto;*/
   /* margin left: auto;
@@ -444,8 +493,8 @@ a {
   padding-bottom: 60px;
   /*  padding-left: 15px;
   padding-right: 15px; */
-  background-color: var(--secondary-bckgr-color);
-  color: var(--primary-white-color);
+  background-color: #2f303a;
+  color: #ffffff;
 }
 
 .block-adr {
@@ -453,7 +502,7 @@ a {
   direction: column;
 }
 
-.page-footer__logo {
+.footer__logo {
   margin-right: 93px;
 }
 
@@ -473,16 +522,16 @@ a {
 .block-adr__aus-footer {
   display: block;
   margin-top: 9px;
-  color: var(--secondary-grey-color);
+  color: rgba(255, 255, 255, 0.6);
   direction: column;
-  -webkit-transition: color 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .block-adr__aus-footer:hover,
 .block-adr__aus-footer:focus {
   /*ефект наведення M.2,Веб.З: 1.47.20 */
-  color: var(--accent-color);
+  color: #2196f3;
 }
 
 .soccontact {
@@ -501,7 +550,7 @@ a {
   font-size: 14px;
   line-height: 1.45;
   letter-spacing: 0.03em;
-  color: var(--primary-white-color);
+  color: #ffffff;
 }
 
 /***  сщціальні  компоненти  ***/
@@ -526,10 +575,10 @@ a {
   /* іконка <svg>*/
   height: 20px;
   width: 20px;
-  fill: var(--button-bckgr-color);
+  fill: #f5f4fa;
   /* перед цим з sprite.svg видалити fill */
-  -webkit-transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socialf__link {
@@ -549,20 +598,20 @@ a {
 }
 
 .socialf--link-color {
-  background-color: var(--social-grey-color);
-  -webkit-transition: background-color 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: background-color 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  /*  background-color: var(--primary-white-color); */
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /*  background-color: $primary-white-color; */
 }
 
 .socialf__link:hover {
   /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
-  background-color: var(--accent-color);
+  background-color: #2196f3;
 }
 
 .socialf__item .socialf__link:hover .socialf__icon {
   /* hover на ссилку */
-  fill: var(--primary-white-color);
+  fill: #ffffff;
 }
 
 .telegram-contact {
@@ -581,7 +630,7 @@ a {
   font-size: 14px;
   line-height: 1.45;
   letter-spacing: 0.03em;
-  color: var(--primary-white-color);
+  color: #ffffff;
 }
 
 .body-telegram {
@@ -601,7 +650,7 @@ a {
   height: 50px;
   margin-right: 12px;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  background-color: var(--secondary-bckgr-color);
+  background-color: #2f303a;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
@@ -641,30 +690,30 @@ a {
           justify-content: center;
   border-style: none;
   /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
+  color: #ffffff;
+  background-color: #2196f3;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
   text-align: center;
-  -webkit-transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-send {
   display: inline-block;
-  fill: var(--primary-white-color);
+  fill: #ffffff;
   margin-left: 12px;
-  -webkit-transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
-  transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn__btn-p:hover,
 .filter-btn__btn-p:focus {
-  background-color: var(--accent-color);
-  color: var(--secondary-grey-color);
-  fill: var(--secondary-grey-color);
+  background-color: #2196f3;
+  color: rgba(255, 255, 255, 0.6);
+  fill: rgba(255, 255, 255, 0.6);
 }
 
 .filter-btn {
@@ -696,8 +745,8 @@ a {
   border-style: none;
   /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
   /* margin-right: 8px; */
-  color: var(--primary-text-color);
-  background-color: var(--button-bckgr-color);
+  color: #212121;
+  background-color: #f5f4fa;
   border: 1px solid transparent;
   font-weight: 500;
   font-size: 16px;
@@ -705,8 +754,8 @@ a {
   /* identical to box height, or 162% */
   text-align: center;
   letter-spacing: 0.03em;
-  -webkit-transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
-  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* 
 padding: 12px 24px;
 display: inline-block; / Превращает любой элемент в строчный, простой  текст/
@@ -720,44 +769,44 @@ border: 1px solid black; */
 }
 
 .filter-btn__describe-btn button:hover {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
+  color: #ffffff;
+  background-color: #2196f3;
   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  -webkit-transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function), -webkit-box-shadow 250ms var(--timing-function);
+  -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
-  border: 1px solid var(--no-color);
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .filter-btn__describe-btn button:focus {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
+  color: #ffffff;
+  background-color: #2196f3;
   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  -webkit-transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function), -webkit-box-shadow 250ms var(--timing-function);
+  -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid #2196f3;
 }
 
 .general {
   padding-top: 94px;
   padding-bottom: 94px;
   /*outline: 2px solid tomato; /* слой */
-  /*border: 2px none; var(--button-bckgr-color); /* Убираем границу */
-  /*border: 2px solid var(--button-bckgr-color);*/
-  background-color: var(--primary-white-color);
+  /*border: 2px none; $button-bckgr-color; /* Убираем границу */
+  /*border: 2px solid $button-bckgr-color;*/
+  background-color: #ffffff;
 }
 
 /* main */
 .section-dcrtn {
   margin: 0;
-  /*border-style: solid var(--secondary-bckgr-color);*/
+  /*border-style: solid $secondary-bckgr-color;*/
   /*background-color: teal;*/
 }
 
@@ -799,10 +848,10 @@ border: 1px solid black; */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid var(--button-bckgr-color);
+  border: 1px solid #f5f4fa;
   padding: 0;
-  -webkit-transition: opacity 250ms var(--timing-function);
-  transition: opacity 250ms var(--timing-function);
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   /* transform: translateY(0); */
   /* overflow: visible;*/
@@ -841,14 +890,14 @@ border: 1px solid black; */
   height: 100%;
   bottom: -100%;
   right: 0;
-  background-color: var(--no-color);
+  background-color: rgba(0, 0, 0, 0);
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   /* need 100: under text , if 0 on the text*/
-  -webkit-transition: -webkit-transform 250ms var(--timing-function);
-  transition: -webkit-transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   opacity: 0;
 }
@@ -869,15 +918,15 @@ border: 1px solid black; */
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-  color: var(--primary-white-color);
-  background-color: var(--thumb-c-color);
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   /*  need 0 , stay */
-  -webkit-transition: -webkit-transform 250ms var(--timing-function);
-  transition: -webkit-transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
   /* need 1 */
 }
@@ -919,12 +968,12 @@ border: 1px solid black; */
   padding-left: 24px;
   padding-right: 24px;
   margin: 0;
-  background-color: var(--primary-white-color);
+  background-color: #ffffff;
 }
 
 .name-work {
   margin: 0;
-  color: var(--primary-text-color);
+  color: #212121;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -935,7 +984,7 @@ border: 1px solid black; */
 .type-work {
   margin-top: 10px;
   margin-bottom: 0px;
-  color: var(--title-text-color);
+  color: #757575;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;

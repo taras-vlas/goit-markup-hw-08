@@ -1,12 +1,24 @@
 @import "./utils/variables";
 @import "./base/modern-normalize";
-@import "./base/fonts"; 
-@import "./utils/mixins"; 
-// @import "./utils/placeholders"; 
+@import "./base/fonts";
+@import "./utils/mixins";
+// @import "./utils/placeholders";
+
+@import "./layouts/container-r";
+
+
+//   //@import "./mobile/section";
+//@debug/@import "./base";
+//   //@import "./mobile/features";
+//   //@import "./mobile/reviews";
+//@import "./mobile/modal";       //5
+//@import "./mobile/menu";        //3
+//@import "./mobile/mobile-menu"; //4
+
 
 @import "./base/common";
 @import "./components/logo";
-@import "./components/page-header";
+@import "./components/header";
 @import "./layouts/hero";
 @import "./layouts/advantage";
 @import "./components/butn";
@@ -14,7 +26,8 @@
 @import "./layouts/staff";
 @import "./components/social";
 @import "./layouts/clients";
-@import "./components/page-footer";
-@import "./components/modal";
-@import "./components/form";
+@import "./components/footer";
 
+//@import "./components/modal";
+@import "./mobile/index";
+//@import "./components/form";

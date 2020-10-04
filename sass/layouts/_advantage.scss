@@ -1,5 +1,5 @@
 section {
-  color: var(--primary-text-color);
+  color: $primary-text-color;
 }
 
 /* section advantage */
@@ -16,13 +16,13 @@ section {
 /* box-shadow: ;*/
   display: block;
   content: ""; /*обовязкова властивысть псевдоелемента, для йоно створення досить залишити пустим*/
-  /*  border: 1px solid var(--accent-color); /* рамка */
+  /*  border: 1px solid $accent-color; /* рамка */
   /*  outline: 1px solid red;*/
 
   background-size: 25%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--button-bckgr-color);
+  background-color: $button-bckgr-color;
   border-radius: 4px;
   /* outline: 2px solid teal; /* слой */
 }
@@ -44,7 +44,7 @@ section {
 .advantage__title {
   margin-top: 0;
   margin-bottom: 0;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
 
   font-weight: 700;
   font-size: 14px;
@@ -59,7 +59,7 @@ p {
   margin-top: 10px;
   margin-bottom: 0;
 
-  color: var(--title-text-color);
+  color: $title-text-color;
 
   font-weight: 400;
   font-size: 14px;

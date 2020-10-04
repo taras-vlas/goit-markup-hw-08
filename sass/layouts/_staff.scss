@@ -6,7 +6,7 @@
   margin-bottom: 0;
   padding-top: 94px;
   padding-bottom: 94px;
-  background-color: var(--button-bckgr-color);
+  background-color: $button-bckgr-color;
 
   /* background-color: olive; /* завжди використовуватити в роботі з container*/
 }
@@ -14,7 +14,7 @@
 .staff__border {
   /* рамка */
   /*  outline: 2px solid red;*/
-  border: 1px transparent var(--button-bckgr-color);
+  border: 1px transparent $button-bckgr-color;
   padding: 0;
 
   /*  float: left;*/
@@ -31,11 +31,11 @@
   /* width: 270px;*/
   margin-right: 30px;
   margin-bottom: 30px;
-  background-color: var(--primary-white-color);
+  background-color: $primary-white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  transition: box-shadow 250ms var(--timing-function);
+  transition: box-shadow 250ms $timing-function;
 }
 /* структурні псевдокласи */
 .staff__ul .staff__li:nth-child(4n) {
@@ -56,7 +56,7 @@
   margin-bottom: 0px;
   margin-top: 0px;
   text-align: center;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
 
   font-weight: 500;
   font-size: 16px;
@@ -68,7 +68,7 @@
   margin-top: 10px;
   margin-bottom: 16px;
   text-align: center; /*від цього елемента унаслідує  */
-  color: var(--title-text-color);
+  color: $title-text-color;
 
   font-weight: 400;
   font-size: 16px;

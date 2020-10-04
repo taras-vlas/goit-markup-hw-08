@@ -1,25 +1,25 @@
-.page-footer {
-     /*  центрування  */
-    /*margin: 0 auto;*/
- /* margin left: auto;
+.footer {
+  /*  центрування  */
+  /*margin: 0 auto;*/
+  /* margin left: auto;
   margin right: auto;*/
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 60px;
   padding-bottom: 60px;
-/*  padding-left: 15px;
+  /*  padding-left: 15px;
   padding-right: 15px; */
-  background-color: var(--secondary-bckgr-color);
-  color: var(--primary-white-color);
+  background-color: $secondary-bckgr-color;
+  color: $primary-white-color;
 }
-.block-adr{
+.block-adr {
   display: block;
   direction: column;
 }
 
-.page-footer__logo{
+.footer__logo {
   margin-right: 93px;
-} 
+}
 /* address */
 .block-adr__address {
   width: 231px;
@@ -33,42 +33,41 @@
 }
 .block-adr__aus-footer {
   display: block;
-  margin-top: 9px; 
-  color: var(--secondary-grey-color);
+  margin-top: 9px;
+  color: $secondary-grey-color;
   direction: column;
-  transition: color 250ms  var(--timing-function),
-  opacity 250ms  var(--timing-function);
+  transition: color 250ms $timing-function, opacity 250ms $timing-function;
 }
 .block-adr__aus-footer:hover,
 .block-adr__aus-footer:focus {
   /*ефект наведення M.2,Веб.З: 1.47.20 */
-  color: var(--accent-color);
+  color: $accent-color;
 }
 
-.soccontact{
+.soccontact {
   /* padding-top: 75px;
  padding-bottom: 97px; */
- width: 206px;
- margin-top: 15px;
- margin-bottom: 34px;
- margin-right: 93px;
-} 
+  width: 206px;
+  margin-top: 15px;
+  margin-bottom: 34px;
+  margin-right: 93px;
+}
 .soccontact__title {
-margin-top: 0;
-/*margin-bottom: 20px;*/
-font-weight: 700;
-font-size: 14px;
-line-height: 1.45;
-letter-spacing: 0.03em;
- color: var(--primary-white-color);
+  margin-top: 0;
+  /*margin-bottom: 20px;*/
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: $primary-white-color;
 }
 /***  сщціальні  компоненти  ***/
 
 .socialf {
   /* позиціонуємо елементи <ul>  в ряд, Практ. №8 1.50.59 */
   display: flex;
-  justify-content: center; 
-  padding-bottom: 0; 
+  justify-content: center;
+  padding-bottom: 0;
   margin-top: 20px;
 }
 .socialf__item:not(:last-child) {
@@ -79,11 +78,10 @@ letter-spacing: 0.03em;
   /* іконка <svg>*/
   height: 20px;
   width: 20px;
-  fill: var(--button-bckgr-color); /* перед цим з sprite.svg видалити fill */
-  transition: fill 250ms  var(--timing-function), 
-  opacity 250ms var(--timing-function);
+  fill: $button-bckgr-color; /* перед цим з sprite.svg видалити fill */
+  transition: fill 250ms $timing-function, opacity 250ms $timing-function;
 }
- .socialf__link{
+.socialf__link {
   /* ссилка <a> */
   display: flex;
   justify-content: center;
@@ -92,56 +90,55 @@ letter-spacing: 0.03em;
   height: 44px;
   border-radius: 50%;
 }
-.socialf--link-color{
-  background-color: var(--social-grey-color);
-  transition: background-color 250ms  var(--timing-function),
-  opacity 250ms  var(--timing-function);
-  /*  background-color: var(--primary-white-color); */
+.socialf--link-color {
+  background-color: $social-grey-color;
+  transition: background-color 250ms $timing-function,
+    opacity 250ms $timing-function;
+  /*  background-color: $primary-white-color; */
 }
 .socialf__link:hover {
   /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 }
 .socialf__item .socialf__link:hover .socialf__icon {
-    /* hover на ссилку */
-  fill: var(--primary-white-color);
+  /* hover на ссилку */
+  fill: $primary-white-color;
 }
 
-.telegram-contact{
+.telegram-contact {
   /* padding-top: 75px;
  padding-bottom: 97px; */
- width: 570px;
- height: 86px;
- margin-top: 12px;
-
-} 
+  width: 570px;
+  height: 86px;
+  margin-top: 12px;
+}
 .telegram-title {
-margin-top: 0;
-left: 0;
-/*margin-bottom: 20px;*/
-font-weight: 700;
-font-size: 14px;
-line-height: 1.45;
-letter-spacing: 0.03em;
- color: var(--primary-white-color);
+  margin-top: 0;
+  left: 0;
+  /*margin-bottom: 20px;*/
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: $primary-white-color;
 }
 .body-telegram {
-    display: flex ;
-    position: relative;
-    padding-top: 20px;
-  }
-  
- .box-telegram {
-   display: flex ;
+  display: flex;
+  position: relative;
+  padding-top: 20px;
+}
+
+.box-telegram {
+  display: flex;
   position: relative;
   width: 358px;
   height: 50px;
   margin-right: 12px;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  background-color: var(--secondary-bckgr-color);
+  background-color: $secondary-bckgr-color;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 16px ;
+  padding-left: 16px;
 }
 .font-telegram {
   font-size: 16px;
@@ -150,7 +147,7 @@ letter-spacing: 0.03em;
   align-items: center;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
-  }
+}
 .filter-btn__btn-p {
   display: flex; /*щоб розвернути в горизонталь і запрацювали  padding горизонталі */
   position: absolute;
@@ -159,17 +156,17 @@ letter-spacing: 0.03em;
   width: auto;
   height: 50px;
   border-radius: 4px;
-  padding-left: 28px; 
-  padding-right: 28px ;
- 
+  padding-left: 28px;
+  padding-right: 28px;
+
   padding-top: 10px;
   padding-bottom: 10px;
   justify-content: center;
   border-style: none;
   /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
 
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
+  color: $primary-white-color;
+  background-color: $accent-color;
 
   font-weight: 700;
   font-size: 16px;
@@ -177,19 +174,19 @@ letter-spacing: 0.03em;
   letter-spacing: 0.06em;
 
   text-align: center;
-  transition: background-color 250ms var(--timing-function),
-    color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  transition: background-color 250ms $timing-function,
+    color 250ms $timing-function, opacity 250ms $timing-function;
 }
-  .icon-send {
-   display: inline-block; 
-   fill: var(--primary-white-color);
-   margin-left: 12px;
-   transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
+.icon-send {
+  display: inline-block;
+  fill: $primary-white-color;
+  margin-left: 12px;
+  transition: fill 250ms $timing-function, opacity 250ms $timing-function;
 }
 
 .filter-btn__btn-p:hover,
 .filter-btn__btn-p:focus {
-  background-color: var(--accent-color);
-  color: var(--secondary-grey-color);
-  fill: var(--secondary-grey-color);
+  background-color: $accent-color;
+  color: $secondary-grey-color;
+  fill: $secondary-grey-color;
 }

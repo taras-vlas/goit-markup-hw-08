@@ -5,19 +5,17 @@
   width: 100%;
   height: 100%;
 
-  background-color: var(--noel-color);
+  background-color: $noel-color;
 
   padding: 50px 30px;
   overflow-y: scroll;
-  
 
-  transition: opacity 250ms var(--timing-function);
+  transition: opacity 250ms $timing-function;
   /* opacity: 1;
   /* visibility: visible;*/
 }
 .backdrop .is-hidden {
   display: none;
-
 
   /* "вскрыть" - спеціальні класи */
   opacity: 0; /* 1 прозорість 100%; або 0 - 0% */
@@ -26,8 +24,7 @@
 }
 .modal {
   padding: 20px;
-  background-color: var(--primary-white-color);
-
+  background-color: $primary-white-color;
 
   /* позиціювання рекомендується саме таке: transform   JS*/
   transform: translate(-50%, -50%) scale(1.05);
@@ -37,18 +34,25 @@
   backdrop-filter: blur(1px);
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 4px;
-  
-  color: var(--primary-text-color);
-  transition: transform 250ms var(--timing-function),
-    opacity 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
+
+  color: $primary-text-color;
+  transition: transform 250ms $timing-function, opacity 250ms $timing-function,
+    box-shadow 250ms $timing-function;
   /*transition: all 250ms;*/
+}
+
+@media (min-width: 450px) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 450px;
+  width: 100%;
 }
 
 .backdrop .is-hidden .modal {
   transform: translate(-50%, 100%) scale(0.1);
 }
-
 
 .button__modal-close {
   /* close*/
@@ -58,10 +62,10 @@
   width: 30px;
   height: calc(30px - 1px);
   border-radius: 50%;
-  border: 1px solid var(--title-text-color);
-  background-color: var(--primary-white-color);
-  transition: background-color 250ms var(--timing-function),
-    opacity 250ms var(--timing-function);
+  border: 1px solid $title-text-color;
+  background-color: $primary-white-color;
+  transition: background-color 250ms $timing-function,
+    opacity 250ms $timing-function;
 }
 /* overflow: auto; /* скрол */
 /* visibility: hidden; */
@@ -74,17 +78,14 @@
   transform: translate(-50%, -50%);
   width: 18px;
   height: 18px;
-  fill: var(--primary-text-color); /* перед цим з sprite.svg видалити fill */
-  transition: fill 250ms var(--timing-function),
-    opacity 250ms var(--timing-function);
+  fill: $primary-text-color; /* перед цим з sprite.svg видалити fill */
+  transition: fill 250ms $timing-function, opacity 250ms $timing-function;
 }
 
 .is-hidden {
   top: -100%;
   transform: translate(-50%, -50%);
 } /* scale(0.1); */
-
-
 
 .menu-button {
   display: -webkit-inline-box;
@@ -101,18 +102,14 @@
   }
 }
 
-
-
-
-
 .button__modal-close:hover {
   /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
-  /* fill: var(--accent-color); */
-  color: var(--accent-color);
+  /* fill: $accent-color; */
+  color: $accent-color;
 }
 .modal .button__modal-close:hover .icon-modal-close {
   /* hover на ссилку */
-  fill: var(--accent-color);
+  fill: $accent-color;
 }
 .content-modal {
   padding-left: 0px;
@@ -132,7 +129,7 @@
   margin-left: 0;
   margin-bottom: 12px;
   margin-top: 0;
-  color: var(--primary-text-color);
+  color: $primary-text-color;
 }
 .flexbox-modal {
   display: flex;

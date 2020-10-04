@@ -1,4 +1,3 @@
-
 .butn {
   display: inline-block; /*щоб розвернути в горизонталь і запрацювали  padding горизонталі */
   position: relative;
@@ -14,8 +13,9 @@
   border-style: none;
   /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
 
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
+  color: $primary-white-color;
+  //background-color: $accent-color;
+  background-color: $accent-color;
 
   font-weight: 700;
   font-size: 16px;
@@ -23,11 +23,11 @@
   letter-spacing: 0.06em;
 
   text-align: center;
-  transition: background-color 250ms var(--timing-function),
-    color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  transition: background-color 250ms $timing-function,
+    color 250ms $timing-function, opacity 250ms $timing-function;
 }
 .butn:hover,
 .butn:focus {
-  background-color: var(--accent-color);
-  color: var(--secondary-grey-color);
+  background-color: $accent-color;
+  color: $secondary-grey-color;
 }
