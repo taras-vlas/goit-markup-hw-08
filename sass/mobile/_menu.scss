@@ -17,6 +17,7 @@
 
 .menu-button.is-open .icon-cross {
  // display: block;
+ 
 }
 
 .menu-button.is-open .icon-menu {
@@ -36,11 +37,13 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
- 
+   // width: 100%;
+      width: 480px;
+      height: 453px;
+
     &.is-open {
       display: block;
-      }
+    }
   }
 
   @media screen and (min-width: 768px) {
