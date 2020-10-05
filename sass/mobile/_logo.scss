@@ -1,0 +1,10 @@
+.logo {
+  @extend %link;
+  
+  padding: 10px;
+ 
+  &:hover,
+  &:focus {
+    opacity: 250ms $timing-function;
+  }
+}

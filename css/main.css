@@ -522,24 +522,24 @@ summary {
 }
 
 @media screen and (min-width: 768px) {
-  .menu-button .menu-button {
+  .menu-button {
     display: none;
   }
 }
 
-.menu-button .menu-button .icon-cross {
+.menu-button .icon-cross {
   display: none;
 }
 
-.menu-button .menu-button.is-open .icon-cross {
+.menu-button.is-open .icon-cross {
   display: block;
 }
 
-.menu-button .menu-button.is-open .icon-menu {
+.menu-button.is-open .icon-menu {
   display: none;
 }
 
-.menu-button .menu-container {
+.menu-container {
   background-color: palegoldenrod;
   padding: 20px;
   text-align: center;
@@ -547,20 +547,20 @@ summary {
 }
 
 @media screen and (max-width: 767px) {
-  .menu-button {
+  .menu-container {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
   }
-  .menu-button.is-open {
+  .menu-container.is-open {
     display: block;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .menu-button {
+  .menu-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -585,6 +585,12 @@ summary {
 
 .contacts {
   outline: 1px solid orange;
+}
+
+@media screen and (min-width: 1200px) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .mobile-menu {
