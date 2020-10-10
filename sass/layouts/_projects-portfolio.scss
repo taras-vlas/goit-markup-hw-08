@@ -1,0 +1,106 @@
+.portfolio-projects {
+  @extend %sectionPadding;
+
+ 
+/*
+
+    &__link {
+      :first-child  {
+        margin-top: 0px;
+      
+        @include for-size(mobile-only) {
+          margin-top: 30px;
+        }
+        @include for-size(mobile) {
+          margin-top: 30px;
+        }
+      }
+    }
+*/
+ 
+  &__list {
+    @include for-size(tablet) {
+      @include flexBox(flex-start, start);
+      flex-wrap: wrap;
+ //     margin: -15px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    max-width: 450px;
+    background-color: getColor("primary-white-color");
+
+     @include for-size(tablet) {
+      width: calc((100% - 30px * 2) / 2);
+//
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    @include for-size(desktop) {
+      width: calc((100% - 30px * 3) / 3);
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+      transition: box-shadow 250ms $timing-function;
+    }
+
+   
+  }
+
+  &__text-content {
+    padding: 24px 20px;
+    border: 1px solid getColor("button-bckgr-color");
+ //   border-top: 0;
+  }
+
+  &__title {
+    @include fontParam(18px, 700, 2, 0.06em);
+
+    color: getColor("primary-text-color");
+  }
+
+  &__description {
+    @include fontParam(16px, 400, 1.87, 0.03em);
+ //   margin-top: 0;
+ //   margin-bottom: 0;
+
+    color: getColor("title-text-color");
+  }
+
+  &__textbox {
+    @include flexBox(center, center);
+    position: absolute;
+    padding: 24px 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 294px;
+    overflow: hidden;
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    padding: 63px 24px;
+
+    font-size: 18px;
+    line-height: 1.56;
+    color: getColor("primary-white-color");
+    background: getColor("thumb-c-color");
+    transform: translate(0, calc(100% + 1px));
+    transition: transform 0.25s $timing-function;
+
+    .portfolio-projects__item:hover &,
+    .portfolio-projects__item:focus & {
+      transform: translate(0, 0);
+    }
+  }
+}

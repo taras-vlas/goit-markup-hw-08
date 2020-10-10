@@ -1,33 +1,22 @@
 @import "./utils/variables";
-@import "./base/modern-normalize";
-@import "./base/fonts";
+@import "./utils/breakpoints";
 @import "./utils/mixins";
-// @import "./utils/placeholders";
+@import "./utils/placeholders";
 
-@import "./mobile/index";
-
-
-//   //@import "./mobile/section";
-//@debug/@import "./base";
-//   //@import "./mobile/features";
-//   //@import "./mobile/reviews";
-//@import "./mobile/modal";       //5
-//@import "./mobile/menu";        //3
-//@import "./mobile/mobile-menu"; //4
-
-
+@import "./base/modern-normalize";
+@import "./base/global";
 @import "./base/common";
-@import "./components/logo";
-@import "./components/header";
+
+@import "./components/social-icon";
+@import "./components/navigation";
+@import "./components/modal";
+@import "./components/form-feedback";
+@import "./components/burger-menu";
+
+@import "./layouts/header";
 @import "./layouts/hero";
-@import "./layouts/advantage";
-@import "./components/butn";
-@import "./layouts/activity";
-@import "./layouts/staff";
-@import "./components/social";
+@import "./layouts/advantages";
+@import "./layouts/service";
+@import "./layouts/team";
 @import "./layouts/clients";
-@import "./components/footer";
-
-//@import "./components/modal";
-
-//@import "./components/form";
+@import "./layouts/footer";

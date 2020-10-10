@@ -1,0 +1,50 @@
+
+
+      @include for-size(mobile) {
+       
+        &:last-child {
+         margin-bottom: 30px;
+        background-color: red;
+
+        }
+      }
+
+
+       &__line {
+     margin-bottom: 30px;
+      @include for-size(mobile) {
+      
+        &:not(:last-child) {
+            
+        }
+      }
+  }
+
+
+	@include for-size(mobile-only) {
+		padding-bottom: 40px;
+	}
+	@include for-size(mobile) {
+		padding-bottom: 40px;
+	}
+
+	@include for-size(desktop) {
+		padding-top: 94px;
+		padding-bottom: 94px;
+	}
+
+
+
+     &__nav {
+    @include for-size(mobile-only) {
+		  padding-bottom: 40px;
+  	}
+  	@include for-size(mobile) {
+	   	padding-bottom: 40px;
+    }
+    @include for-size(tablet) {
+      margin-bottom: 14px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 34px;
+    }

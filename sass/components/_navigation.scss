@@ -1,0 +1,51 @@
+.site-nav {
+  @include fontParam(14px, 500, 1.14, 0.02em);
+  display: none;
+  color: getColor("primary-text-color");
+
+  &__list {
+    @include flexBox(space-between, center);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  &__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    &:hover,
+    &:focus {
+      color: getColor("accent-color");
+      cursor: pointer;
+    }
+  }
+
+  @include for-size(tablet) {
+    width: 100%;
+    @include flexBox(space-between, center);
+  }
+}
+
+.site-nav__link {
+  &--accent {
+    position: relative;
+    color: getColor("accent-color");
+  }
+
+  &--accent::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    margin-bottom: -1px;
+
+    background-color: getColor("accent-color");
+    border-radius: 2px;
+  }
+}

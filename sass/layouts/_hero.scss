@@ -1,43 +1,94 @@
-/*hero*/
-h1 {
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36; /* or 136% */
-  text-align: center;
-  letter-spacing: 0.06em;
-}
-.hero__title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
 .hero {
-  /* height: 600px; центрування  margin: 0 auto; */
-  margin-left: auto;
+  @include flexBox(center, center);
+    min-width: 480px;
+    height: 400px;
   margin-right: auto;
-  padding-top: 200px;
-
-  text-align: center; /*від цього елемента унаслідує .hero__title та .button */
-  max-width: 1600px;
-  height: 600px;
-  outline: 1px, solid, blacK;
-  background-image: linear-gradient(
-      to right,
-      rgba(33, 38, 48, 0.5),
-      rgba(23, 23, 46, 0.3)
-    ),
-    url("../images/main/main-jpeg.jpg");
+  margin-left: auto;
+  text-align: center;
+  background-color: getColor("button-bckgr-color"); 
   background-position: center;
-  background-repeat: no repeat;
-  background-size: cover;
-  background-color: $secondary-bckgr-color;
-  color: $primary-white-color;
+  background-size: cover;  
 
-  /*background-color: #tomato; / завжди використовуватити в роботі з container*/
-  /*margin-bottom: 100px; / margin, padding допоміжно використовуватити в роботі */
-}
+  
+      background-image: url(../images//mobile/main-jpeg-480x400.jpg),
+                    linear-gradient( to right, 
+                    rgba(33, 38, 48, 0.5),
+                    rgba(23, 23, 46, 0.3)); 
+  
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url(../images//mobile/main-jpeg-480x400@2.jpg),
+                      linear-gradient( to right, 
+                      rgba(33, 38, 48, 0.5),
+                      rgba(23, 23, 46, 0.3));
+      }
+  
 
-/* button - Системи кнопок M.2,Веб.З: 2.09.40 */
-.hero .hero__butn {
-  text-decoration: none; /*праює тільки зі ссилками*/
+  @include for-size(tablet) {
+    min-width: 768px;
+        background-image: url(../images/tablet/main-jpeg-768x400.jpg),
+                    linear-gradient( to right, 
+                    rgba(33, 38, 48, 0.5),
+                    rgba(23, 23, 46, 0.3)); 
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url(../images/tablet/main-jpeg-768x400@2.jpg),
+                      linear-gradient( to right, 
+                      rgba(33, 38, 48, 0.5),
+                      rgba(23, 23, 46, 0.3));
+      }
+  }
+
+  @include for-size(desktop) {
+    max-width: 1600px;
+    height: 600px;
+    background-image: url(../images/desktop/main-jpeg-1600x600.jpg),
+                      linear-gradient( to right, 
+                      rgba(33, 38, 48, 0.5),
+                      rgba(23, 23, 46, 0.3));
+      
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/desktop/main-jpeg-1600x600@2.jpg),
+                        linear-gradient( to right, 
+                        rgba(33, 38, 48, 0.5),
+                        rgba(23, 23, 46, 0.3));
+    }
+  }  
+
+
+  &__container {
+    @include flexBox(center, center);
+    flex-direction: column;
+    max-width: 360px;
+        @include for-size(desktop) {
+          max-width: 696px;
+        }
+  }
+
+  &__title {
+    @include fontParam(26px, 900, 1.62, 0.06em);
+    display: inline-block;
+    margin-bottom: 30px;
+    color: getColor("primary-white-color");
+    text-transform: uppercase;
+        @include for-size(desktop) {
+          @include fontParam(44px, 900, 1.36, 0.06em);
+          max-width: 696px;
+        }
+  }
+
+  &__btn {
+    @include button(10px 32px, getColor("accent-color"));
+    @include fontParam(16px, 700, 1.87, 0.06em);
+
+    color: getColor("primary-white-color");
+    font-family: inherit;
+  }
 }

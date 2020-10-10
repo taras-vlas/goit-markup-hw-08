@@ -1,112 +1,77 @@
-.backdrop {
-  position: absolute;
-  left: 0;
+.dropbox {
+  @include transition(opacity);
+
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 1024px;
-  background-color: $noel-color;
-  /* overflow: auto; /* скрол */
-  transition: opacity 250ms $timing-function;
-  /* opacity: 1;
-  /* visibility: visible;*/
-}
-.backdrop .is-hidden {
-  /* "вскрыть" - спеціальні класи */
-  opacity: 0; /* 1 прозорість 100%; або 0 - 0% */
-  /* visibility: hidden; /* блокує елементи під оверлеєм коли вікна backdrop вскрите */
-  pointer-events: none; /* =вказівника позиція; none означає, що за умови дії класу is-hidden на елемент не діють події*/
-}
-.backdrop .is-hidden .modal {
-  transform: translate(-50%, 100%) scale(0.1);
+  height: 100%;
+  z-index: 100;
+  background-color: getColor("noel-color");
+  overflow-y: scroll;
 }
 
 .modal {
-  position: fixed; /* ! рекомендується 1)позиція, 2)геометрія, 3) інше */
-  /* left: 529px;
-  top: 221px; */
-  top: 50%;
-  left: 50%;
-  width: 528px;
-  height: 581px;
+  @include transition(transform);
+
+  position: absolute;
+    width: 450px;
+    //height: 609px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 40px;
-
-  /* позиціювання рекомендується саме таке: transform   JS*/
-  transform: translate(-50%, -50%) scale(1.05);
-  /* , scale:(1); значення > або < 1 деє ефект прближення чи віддалення вікна*/
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
-    inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(1px);
-  /* Note: backdrop-filter has minimal browser support */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  background-color: $primary-white-color;
-  color: $primary-text-color;
-  transition: transform 250ms $timing-function, opacity 250ms $timing-function,
-    box-shadow 250ms $timing-function;
-  /*transition: all 250ms;*/
-}
-.button__modal-close {
-  /* close*/
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: calc(30px - 1px);
-  border-radius: 50%;
-  border: 1px solid $title-text-color;
-  background-color: $primary-white-color;
-  transition: background-color 250ms $timing-function,
-    opacity 250ms $timing-function;
-}
-/* overflow: auto; /* скрол */
-/* visibility: hidden; */
+  background-color: getColor("primary-white-color");
+        @include for-size(desktop) {
+          width: 528px;
+        }
 
-.icon-modal-close {
-  /* іконка <svg>*/
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 18px;
-  height: 18px;
-  fill: $primary-text-color; /* перед цим з sprite.svg видалити fill */
-  transition: fill 250ms $timing-function, opacity 250ms $timing-function;
+  &__close-btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid getColor("social-decor-color");
+    background-color: getColor("primary-white-color");
+    outline: transparent;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 186px;
+
+    .modal__close-btn:focus &,
+    .modal__close-btn:hover & {
+      fill: getColor("accent-color");
+    }
+  }
+
+  @media screen and (max-height: 609px) {
+    position: relative;
+    top: 15px;
+  }
+
+  @media screen and (min-height: 610px) {
+    top: 50%;     //top: 38%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.is-hidden {
-  top: -100%;
-  transform: translate(-50%, -50%);
-} /* scale(0.1); */
+.is-hidden .modal {
+  transform: translate(-50%, 100%);
 
-.button__modal-close:hover {
-  /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
-  /* fill: $accent-color; */
-  color: $accent-color;
-}
-.modal .button__modal-close:hover .icon-modal-close {
-  /* hover на ссилку */
-  fill: $accent-color;
-}
-.content-modal {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  width: 100%;
-  height: 100%;
-}
-.modal-title {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  letter-spacing: 0.03em;
-  margin-left: 0;
-  margin-bottom: 12px;
-  margin-top: 0;
-  color: $primary-text-color;
-}
-.flexbox-modal {
-  display: flex;
-  flex-direction: column;
+  @media screen and (max-height: 609px) {
+    transform: translate(0, 100%);
+  }
 }

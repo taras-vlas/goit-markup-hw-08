@@ -1,11 +1,18 @@
 @import "./utils/variables";
-@import "./base/modern-normalize";
-@import "./base/fonts";
+@import "./utils/breakpoints";
 @import "./utils/mixins";
+@import "./utils/placeholders";
 
+@import "./base/modern-normalize";
+@import "./base/global";
 @import "./base/common";
-@import "./components/logo";
-@import "./components/header";
-@import "./components/footer";
-@import "./layouts/filter";
-@import "./layouts/portfolio";
+//@import "./base/fonts/templates";
+
+@import "./components/social-icon";
+@import "./components/navigation";
+@import "./components/burger-menu";
+@import "./components/filter-portfolio";
+
+@import "./layouts/header";
+@import "./layouts/projects-portfolio";
+@import "./layouts/footer";
