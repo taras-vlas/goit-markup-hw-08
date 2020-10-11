@@ -1,34 +1,21 @@
+ 
 .portfolio-filter {
   @include flexBox(flex-start, stretch);
   flex-wrap: wrap;
-     margin-bottom: 34px; 
-
-     @include for-size(mobile-only) {  //mobile - 1
-      padding-bottom: 40px;
-     background-color: orange ;
-  	  
-	 /* @include for-size(mobile) {
-	   	padding-bottom: 40px; */
-      
-    @include for-size(tablet-only) {  //desktop - 1
-      padding-bottom: 14px; 
-      background-color: red ;
-       
-   /* @include for-size(tablet) {
-      margin-bottom: 14px; */
-    
-   /* @include for-size(desktop) { */
-        
-       
-  } }  
+ 
 
   &__item {
-    margin-bottom: 15px;
+    padding-bottom: 15px;
 
     &:not(:last-child) {
       margin-right: 8px;
+
+        @include for-size(desktop) {
+          margin-bottom: 0px;
+        } 
     }
   }
+
 
   &__link {
     @include fontParam(16px, 500, 1.62, 0.03em);
@@ -45,12 +32,35 @@
     }
   }
 
-
-  &__nav {
-  
-  }
-
   @include for-size(tablet) {
     @include flexBox(center, stretch);
   }
+
+
+    @include for-size(mobile-only) {  //mobile - 1
+      padding-bottom: 40px;
+      background-color: green ;
+    }
+
+    @include for-size(mobile) { 
+      padding-bottom: 40px;
+      background-color: orange ;
+    }	  
+	     
+    /* @include for-size(tablet-only) {
+      padding-bottom:14px; 
+      background-color: greenyellow;
+     } */
+    @include for-size(tablet) {  //desktop - 1
+      padding-bottom: 14px; 
+      background-color: red ;
+    }
+    @include for-size(desktop) { 
+      padding-bottom:34px; 
+      background-color:orchid ;
+    }
+    
 }
+ 
+
+
