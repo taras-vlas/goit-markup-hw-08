@@ -1,6 +1,7 @@
 .portfolio-projects {
   @extend %sectionPadding;
 
+
  
   &__list {
     @include for-size(tablet) {
@@ -110,7 +111,7 @@
     line-height: 1.56;
     color: getColor("primary-white-color");
     background: getColor("thumb-c-color");
-    transform: translate(0, calc(100% + 1px));
+    transform: translateY(101%); 
     transition: transform 0.25s $timing-function;
 
     .portfolio-projects__item:hover &,
