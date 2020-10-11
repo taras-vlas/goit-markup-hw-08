@@ -592,28 +592,24 @@ picture {
 @media (max-width: 479px) {
   .portfolio-filter {
     padding-bottom: 40px;
-    background-color: green;
   }
 }
 
 @media (min-width: 480px) {
   .portfolio-filter {
     padding-bottom: 40px;
-    background-color: orange;
   }
 }
 
 @media (min-width: 768px) {
   .portfolio-filter {
     padding-bottom: 14px;
-    background-color: red;
   }
 }
 
 @media (min-width: 1200px) {
   .portfolio-filter {
     padding-bottom: 34px;
-    background-color: orchid;
   }
 }
 

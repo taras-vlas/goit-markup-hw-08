@@ -2,10 +2,6 @@
   @extend %sectionPadding;
 
  
-
-        
-
- 
   &__list {
     @include for-size(tablet) {
       @include flexBox(flex-start, start);
