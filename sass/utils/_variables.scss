@@ -1,4 +1,9 @@
 
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;
+
+
 $timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 
 $colors: (
@@ -27,8 +32,13 @@ $colors: (
 	@return map-get($colors, $key);
 }
 
+
 $font-family-1: "Roboto", sans-serif;
 $font-family-2: "Raleway", sans-serif;
+
+
+
+
 
 $font-normal: 400px;
 $font-medium: 500px;
@@ -38,4 +48,5 @@ $font-ultra-bold: 900px;
 $font-size-primary: 14px;
 $font-size-links: 16px;
 $font-size-title: 36px;
+
 
